@@ -1,6 +1,6 @@
 from enum import Enum
 
-class Color(Enum):
+class Cinsiyet(Enum):
     Erkek = 1
     Kadin = 2
     
