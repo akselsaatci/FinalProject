@@ -9,6 +9,7 @@ class Calisan(Insan):
         super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk_bilgileri)
         self._tecrube = tecrube
         self._maas = maas
+        self._yeni_maas = 0
         if (self.sektor_bul(sektor) != None):
             self._sektor = sektor
         else:
@@ -17,12 +18,22 @@ class Calisan(Insan):
     def zam_hakki(self):
         # tecrübe ay olarak geldiği için yıl olarak hesaplanması için 12'ye bölünüyor
         tecrube_yili = self._tecrube / 12
+        # Buna gerek varmı ?  zaten else 'e düşücek
         if (tecrube_yili < 2):
+            self._yeni_maas = self._maas
             return 0
         elif (tecrube_yili < 4 and tecrube_yili >= 2 and self._maas < 15000):
-            return self._maas % tecrube_yili
+            zam = self._maas % tecrube_yili
+            self._yeni_maas = self._maas + self._maas * zam
+            return zam
+
         elif (tecrube_yili >= 4 and self._maas < 25000):
-            return (self._maas % tecrube_yili) / 2
+            zam = (self._maas % tecrube_yili) / 2
+            self._yeni_maas = self._maas + self._maas * zam
+            return zam
+        else:
+            self._yeni_maas = self._maas
+            return 0
 
     def get_sektor(self):
         return self._sektor
@@ -51,3 +62,6 @@ class Calisan(Insan):
             return sektor
         else:
             return None
+
+    def __str__(self):
+        return self._ad + " " + self._soyad + " " + str(self._yeni_maas) + " " + str(self._tecrube)
