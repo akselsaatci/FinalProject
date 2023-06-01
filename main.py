@@ -1,1 +1,1 @@
-print(100%3)
+from Enums.Sektor import Sektor

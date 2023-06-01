@@ -1,5 +1,5 @@
 from Insan import Insan
-from Enum.Sektor import Sektor
+from Enums import Sektor
 import Helper.Functions as Helper
 
 

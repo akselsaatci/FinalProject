@@ -1,4 +1,4 @@
-from Enum.Statu import Statu
+from Enums.Statu import Statu
 from Insan import Insan
 
 

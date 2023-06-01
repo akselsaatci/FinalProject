@@ -1,6 +1,6 @@
 
 
-from Class.Calisan import Calisan
+from Classes.Calisan import Calisan
 
 
 class MaviYaka(Calisan):
