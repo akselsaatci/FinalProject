@@ -8,15 +8,20 @@ sektorler = ["teknoloji", "muhasebe", "inşaat", "diğer"]
 class Calisan(Insan):
     # Tecrübe ay değeri olarak geliyor dikkat edilmeli
     def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk_bilgileri, sektor, tecrube, maas):
-        super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk_bilgileri)
         self._tecrube = tecrube
         self._maas = maas
+        self.zam_hakki()
         self._yeni_maas = 0
-        self.sektor_bul
         if sektor in sektorler:
             self._sektor = sektor
         else:
             raise ValueError("Sektor bulunamadi")
+        super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk_bilgileri)
+
+    def get_yeni_maas(self):
+        if self._yeni_maas == 0:
+            self.zam_hakki()
+        return self._yeni_maas
 
     def zam_hakki(self):
         # tecrübe ay olarak geldiği için yıl olarak hesaplanması için 12'ye bölünüyor
@@ -61,4 +66,4 @@ class Calisan(Insan):
         self._maas = maas
 
     def __str__(self):
-        return self._ad + " " + self._soyad + " " + str(self._yeni_maas) + " " + str(self._tecrube)
+        return self._ad + " " + self._soyad + " " + str(self.get_yeni_maas()) + " " + str(self._tecrube)

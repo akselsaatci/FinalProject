@@ -4,9 +4,9 @@ from Insan import Insan
 
 class Issiz(Insan):
     def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk_bilgileri, gecmis_tecrubeler: dict):
-        super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk_bilgileri)
         self._gecmis_tecrubeler = gecmis_tecrubeler
         self.statu_bul()
+        super().__init__(tc_no, ad, soyad, yas, cinsiyet, uyruk_bilgileri)
 
     def get_gecmis_tecrubeler(self):
         return self._gecmis_tecrubeler
@@ -15,7 +15,7 @@ class Issiz(Insan):
         self._gecmis_tecrubeler = gecmis_tecrubeler
 
     def get_statu(self):
-        if(self.statu == "Bulunmadi"):
+        if (self.statu == "Bulunmadi"):
             self.statu_bul()
         return self.statu
 
