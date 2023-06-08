@@ -4,11 +4,12 @@ from Calisan import Calisan
 
 
 class BeyazYaka(Calisan):
-    def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk_bilgileri, sektor, tecrube, maas, tesvik_pirimi):
+    def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk_bilgileri, sektor, tecrube, maas, tesvik_primi):
+        self._tesvik_primi = tesvik_primi
+        self._yeni_maas = 0
         super().__init__(tc_no, ad, soyad, yas, cinsiyet,
                          uyruk_bilgileri, sektor, tecrube, maas)
-        self._tesvik_primi = tesvik_pirimi
-        self._yeni_maas = 0
+       
 
     def get_tesvik_pirimi(self):
         return self._tesvik_primi
@@ -19,6 +20,7 @@ class BeyazYaka(Calisan):
     def get_yeni_maas(self):
         if self._yeni_maas == 0:
             self.zam_hakki()
+        return self._yeni_maas
 
     def zam_hakki(self):
         tecrube_yili = self._tecrube / 12
@@ -43,6 +45,7 @@ class BeyazYaka(Calisan):
                 self._yeni_maas = self._maas
                 return 0
         except:
+            raise
             print("Hata oluştu")
 
     def __str__(self):

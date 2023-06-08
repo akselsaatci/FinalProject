@@ -6,15 +6,20 @@ from Calisan import Calisan
 
 class MaviYaka(Calisan):
     def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk_bilgileri, sektor, tecrube, maas, yipranma_payi):
+        self._yipranma_payi = yipranma_payi
         super().__init__(tc_no, ad, soyad, yas, cinsiyet,
                          uyruk_bilgileri, sektor, tecrube, maas)
-        self._yipranma_payi = yipranma_payi
 
     def get_yipranma_payi(self):
         return self._yipranma_payi
 
     def set_yipranma_payi(self, yipranma_payi):
         self._yipranma_payi = yipranma_payi
+
+    def get_yeni_maas(self):
+        if self._yeni_maas == 0:
+            self.zam_hakki()
+        return self._yeni_maas
 
     def zam_hakki(self):
         # zam hakkını hesaplıyor ise zam hakkını geri dönmem gerekmezmi ama dökümasyonda maaşı set etmem de söylenmiş
@@ -42,4 +47,4 @@ class MaviYaka(Calisan):
             print("Hata oluştu")
 
     def __str__(self):
-        return self._ad + " " + self._soyad + " " + str(self._yeni_maas) + " " + str(self._tecrube)
+        return self._ad + " " + self._soyad + " " + str(self.get_yeni_maas()) + " " + str(self._tecrube)
