@@ -44,7 +44,8 @@ class MaviYaka(Calisan):
                 self._yeni_maas = self._maas
                 return 0
         except:
-            print("Hata oluştu")
+            print(str(self._tc_no) +
+                  " TC ye sahip Mavi yakalının zam hakkı fonksiyonunda Hata oluştu")
 
     def __str__(self):
         return self._ad + " " + self._soyad + " " + str(self.get_yeni_maas()) + " " + str(self._tecrube)

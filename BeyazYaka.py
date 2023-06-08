@@ -9,7 +9,6 @@ class BeyazYaka(Calisan):
         self._yeni_maas = 0
         super().__init__(tc_no, ad, soyad, yas, cinsiyet,
                          uyruk_bilgileri, sektor, tecrube, maas)
-       
 
     def get_tesvik_pirimi(self):
         return self._tesvik_primi
@@ -45,8 +44,8 @@ class BeyazYaka(Calisan):
                 self._yeni_maas = self._maas
                 return 0
         except:
-            raise
-            print("Hata oluştu")
+            print(str(self._tc_no) +
+                  " TC ye sahip Beyaz yakalının zam hakkı fonksiyonunda Hata oluştu")
 
     def __str__(self):
         return self._ad + " " + self._soyad + " " + str(self.get_yeni_maas()) + " " + str(self._tecrube)
