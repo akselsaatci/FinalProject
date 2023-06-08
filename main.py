@@ -16,57 +16,57 @@ def main():
         Insan1 = Insan("151441122", "Ali", "Mehmet", 48, "Erkek", "Türk")
         print(str(Insan1))
         obje_listesi.append(Insan1)
-        Insan2 = Insan("4545154784", "Ayşe", "Fatma", 25, "Kadın", "Türk")
+        Insan2 = Insan("4545154784", "Ayşe", "Fatma", 59, "Kadın", "Türk")
         print(str(Insan2))
         obje_listesi.append(Insan2)
-        Issiz1 = Issiz("23243546234", "Aksel", "Saatcı", 25, "Erkek", "Türk", {
+        Issiz1 = Issiz("23243546234", "Aksel", "Saatcı", 32, "Erkek", "Türk", {
             "mavi_yaka": 10, "beyaz_yaka": 5, "yonetici": 12})
         print(str(Issiz1))
         obje_listesi.append(Issiz1)
-        Issiz2 = Issiz("345646544545", "Zeynep", "Fatma", 25, "Kadın", "Türk", {
+        Issiz2 = Issiz("345646544545", "Zeynep", "Fatma", 43, "Kadın", "Türk", {
             "mavi_yaka": 4, "beyaz_yaka": 7, "yonetici": 23})
         print(str(Issiz2))
         obje_listesi.append(Issiz2)
-        Issiz3 = Issiz("231254354545", "Batuhan", "Doğa", 25, "Erkek", "Türk", {
+        Issiz3 = Issiz("231254354545", "Batuhan", "Doğa", 26, "Erkek", "Türk", {
             "mavi_yaka": 10, "beyaz_yaka": 1, "yonetici": 8})
         print(str(Issiz3))
         obje_listesi.append(Issiz3)
 
-        Calisan1 = Calisan("34343434344", "Hasan", "Yiğit", 25,
-                           "Erkek", "Türk", "teknoloji", 24, 10000)
+        Calisan1 = Calisan("34343434344", "Hasan", "Yiğit", 42,
+                           "Erkek", "Türk", "teknoloji", 59, 5800)
         obje_listesi.append(Calisan1)
         print(str(Calisan1))
-        Calisan2 = Calisan("23243354545", "Yiğit", "Meriç", 25,
-                           "Erkek", "Türk", "muhasebe", 24, 10000)
+        Calisan2 = Calisan("23243354545", "Yiğit", "Meriç", 56,
+                           "Erkek", "Türk", "muhasebe", 57, 15400)
         print(str(Calisan2))
         obje_listesi.append(Calisan2)
-        Calisan3 = Calisan("23243567565", "Serkan", "Melih", 25,
-                           "Erkek", "Türk", "teknoloji", 24, 10000)
+        Calisan3 = Calisan("23243567565", "Serkan", "Melih", 47,
+                           "Erkek", "Türk", "teknoloji", 13, 23000)
         obje_listesi.append(Calisan3)
         print(str(Calisan3))
 
         MaviYaka1 = MaviYaka("23245564545", "Melih", "Fatma",
-                             25, "Erkek", "Yabancı", "diğer", 24, 10000, 10)
+                             38, "Erkek", "Yabancı", "diğer", 0, 16800, 10)
         obje_listesi.append(MaviYaka1)
         print(str(MaviYaka1))
         MaviYaka2 = MaviYaka("343545454546", "Şeyma", "Aydın",
-                             25, "Kadın", "Türk", "muhasebe", 24, 10000, 10)
+                             36, "Kadın", "Türk", "muhasebe", 4, 43000, 10)
         obje_listesi.append(MaviYaka2)
         print(str(MaviYaka2))
         MaviYaka3 = MaviYaka("232435645656", "Merve", "Kaya",
-                             25, "Kadın", "Yabancı", "teknoloji", 24, 10000, 10)
+                             32, "Kadın", "Yabancı", "teknoloji", 23, 47800, 10)
         obje_listesi.append(MaviYaka3)
         print(str(MaviYaka3))
         BeyazYaka1 = BeyazYaka("232456565435", "Nihal", "Kaya",
-                               25, "Kadın", "Türk", "diğer", 24, 500000, 10)
+                               30, "Kadın", "Türk", "diğer", 22, 60000, 10)
         obje_listesi.append(BeyazYaka1)
         print(str(BeyazYaka1))
         BeyazYaka2 = BeyazYaka("343454657565", "Ayşe", "Erdoğan",
-                               25, "Kadın", "Türk", "muhasebe", 24, 10000, 10)
+                               27, "Kadın", "Türk", "muhasebe", 5, 15600, 10)
         obje_listesi.append(BeyazYaka2)
         print(str(BeyazYaka2))
         BeyazYaka3 = BeyazYaka("3413546653454", "Ümit", "Kalem",
-                               25, "Erkek", "Yabancı", "inşaat", 24, 10000, 10)
+                               26, "Erkek", "Yabancı", "inşaat", 8, 28000, 10)
         obje_listesi.append(BeyazYaka3)
         print(str(BeyazYaka3))
         # obje listemden datamı oluşturuyorum. Burda hata vermemesi için bazı yerlerde hasattr ile kontrol ediyorum. Listeyi de for ile dönerek gerekli alanları dolduruyorum.
