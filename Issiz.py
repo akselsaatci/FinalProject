@@ -21,7 +21,7 @@ class Issiz(Insan):
 
     def set_statu(self, statu):
         self.statu = statu
-
+    # Statüyü standart olarak bulunadi attım bazı yerlerde bunu kontrol de ediyorum en kötü ihtimalle bulunamadı dönecek
     statu = "Bulunmadi"
 
     def statu_bul(self):
@@ -42,7 +42,8 @@ class Issiz(Insan):
                 self.statu = "Yonetici"
 
         except:
-            print("Gecmis tecrubelerde hata mevcut")
+            print(str(self._tc_no) +
+                  "TCli işsiz 'in statu bul fonksiyonunda hata oluştu. Gecmis tecrubelerde hata mevcut")
 
     def __str__(self):
         return self._ad + " " + self._soyad + "\nStatu: {}".format(self.get_statu())

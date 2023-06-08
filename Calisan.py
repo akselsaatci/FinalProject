@@ -24,24 +24,28 @@ class Calisan(Insan):
         return self._yeni_maas
 
     def zam_hakki(self):
-        # tecrübe ay olarak geldiği için yıl olarak hesaplanması için 12'ye bölünüyor
-        tecrube_yili = self._tecrube / 12
-        # Buna gerek varmı ?  zaten else 'e düşücek
-        if (tecrube_yili < 2):
-            self._yeni_maas = self._maas
-            return 0
-        elif (tecrube_yili < 4 and tecrube_yili >= 2 and self._maas < 15000):
-            zam = self._maas % tecrube_yili
-            self._yeni_maas = self._maas + self._maas * zam
-            return zam
+        try:
+            # tecrübe ay olarak geldiği için yıl olarak hesaplanması için 12'ye bölünüyor
+            tecrube_yili = self._tecrube / 12
+            # Buna gerek varmı ?  zaten else 'e düşücek
+            if (tecrube_yili < 2):
+                self._yeni_maas = self._maas
+                return 0
+            elif (tecrube_yili < 4 and tecrube_yili >= 2 and self._maas < 15000):
+                zam = self._maas % tecrube_yili
+                self._yeni_maas = self._maas + self._maas * zam
+                return zam
 
-        elif (tecrube_yili >= 4 and self._maas < 25000):
-            zam = (self._maas % tecrube_yili) / 2
-            self._yeni_maas = self._maas + self._maas * zam
-            return zam
-        else:
-            self._yeni_maas = self._maas
-            return 0
+            elif (tecrube_yili >= 4 and self._maas < 25000):
+                zam = (self._maas % tecrube_yili) / 2
+                self._yeni_maas = self._maas + self._maas * zam
+                return zam
+            else:
+                self._yeni_maas = self._maas
+                return 0
+        except:
+            print(str(self._tc_no) +
+                  "TC ye sahip Çalışanın zam hakkı fonksiyonunda Hata oluştu")
 
     def get_sektor(self):
         return self._sektor

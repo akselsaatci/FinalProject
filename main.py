@@ -8,10 +8,11 @@ import pandas as pd
 
 def main():
     try:
+        # Öncelikle tüm objelerimi bir listede tutuyorum. Bu sayede daha sonra ekstra bir insan vs gibi bir class eklemek istersem bu listeye ekleyebilirim.
         obje_listesi = []
         dic = {"objeler": obje_listesi}
         print(dic)
-
+        # Gerekli objeleri oluşturuyorum
         Insan1 = Insan("151441122", "Ali", "Mehmet", 48, "Erkek", "Türk")
         print(str(Insan1))
         obje_listesi.append(Insan1)
@@ -26,49 +27,49 @@ def main():
             "mavi_yaka": 4, "beyaz_yaka": 7, "yonetici": 23})
         print(str(Issiz2))
         obje_listesi.append(Issiz2)
-        Issiz3 = Issiz("231254354545", "Batuhan", "Doğa", 25, "Kadın", "Türk", {
+        Issiz3 = Issiz("231254354545", "Batuhan", "Doğa", 25, "Erkek", "Türk", {
             "mavi_yaka": 10, "beyaz_yaka": 1, "yonetici": 8})
         print(str(Issiz3))
         obje_listesi.append(Issiz3)
 
         Calisan1 = Calisan("34343434344", "Hasan", "Yiğit", 25,
-                           "Kadın", "Türk", "teknoloji", 24, 10000)
+                           "Erkek", "Türk", "teknoloji", 24, 10000)
         obje_listesi.append(Calisan1)
         print(str(Calisan1))
         Calisan2 = Calisan("23243354545", "Yiğit", "Meriç", 25,
-                           "Kadın", "Türk", "teknoloji", 24, 10000)
+                           "Erkek", "Türk", "muhasebe", 24, 10000)
         print(str(Calisan2))
         obje_listesi.append(Calisan2)
         Calisan3 = Calisan("23243567565", "Serkan", "Melih", 25,
-                           "Kadın", "Türk", "teknoloji", 24, 10000)
+                           "Erkek", "Türk", "teknoloji", 24, 10000)
         obje_listesi.append(Calisan3)
         print(str(Calisan3))
 
         MaviYaka1 = MaviYaka("23245564545", "Melih", "Fatma",
-                             25, "Kadın", "Türk", "teknoloji", 24, 10000, 10)
+                             25, "Erkek", "Yabancı", "diğer", 24, 10000, 10)
         obje_listesi.append(MaviYaka1)
         print(str(MaviYaka1))
         MaviYaka2 = MaviYaka("343545454546", "Şeyma", "Aydın",
-                             25, "Kadın", "Türk", "teknoloji", 24, 10000, 10)
+                             25, "Kadın", "Türk", "muhasebe", 24, 10000, 10)
         obje_listesi.append(MaviYaka2)
         print(str(MaviYaka2))
         MaviYaka3 = MaviYaka("232435645656", "Merve", "Kaya",
-                             25, "Kadın", "Türk", "teknoloji", 24, 10000, 10)
+                             25, "Kadın", "Yabancı", "teknoloji", 24, 10000, 10)
         obje_listesi.append(MaviYaka3)
         print(str(MaviYaka3))
         BeyazYaka1 = BeyazYaka("232456565435", "Nihal", "Kaya",
-                               25, "Kadın", "Türk", "teknoloji", 24, 500000, 10)
+                               25, "Kadın", "Türk", "diğer", 24, 500000, 10)
         obje_listesi.append(BeyazYaka1)
         print(str(BeyazYaka1))
         BeyazYaka2 = BeyazYaka("343454657565", "Ayşe", "Erdoğan",
-                               25, "Kadın", "Türk", "teknoloji", 24, 10000, 10)
+                               25, "Kadın", "Türk", "muhasebe", 24, 10000, 10)
         obje_listesi.append(BeyazYaka2)
         print(str(BeyazYaka2))
         BeyazYaka3 = BeyazYaka("3413546653454", "Ümit", "Kalem",
-                               25, "Kadın", "Türk", "teknoloji", 24, 10000, 10)
+                               25, "Erkek", "Yabancı", "inşaat", 24, 10000, 10)
         obje_listesi.append(BeyazYaka3)
         print(str(BeyazYaka3))
-
+        # obje listemden datamı oluşturuyorum. Burda hata vermemesi için bazı yerlerde hasattr ile kontrol ediyorum. Listeyi de for ile dönerek gerekli alanları dolduruyorum.
         data = {
             "Nesne Değeri": [type(obje).__name__ for obje in obje_listesi],
             "TC No": [obje.get_tc_no() for obje in obje_listesi],
@@ -88,8 +89,6 @@ def main():
 
         df = pd.DataFrame(columns=["Nesne Değeri", "TC No", "Ad", "Soyad", "Yaş",  "Cinsiyet", "Uyruk",
                                    "Sektör",  "Tecrübe(Yıl)", "Maaş",  "Yıpranma Payı",  "Teşvik Primi", "Yeni Maaş"], data=data)
-
-        # ad, soyad, sektör ve yeni maaşı içeren yeni bir DataFrame
 
         # Mavi yakalilar b)
         mavi_yakalar = df[df["Nesne Değeri"] == "MaviYaka"]
@@ -127,7 +126,7 @@ def main():
         print(df[(df["Yeni Maaş"] > 10000) & (df.index > 1)
                  & (df.index < 5)][["TC No", "Yeni Maaş"]])
 
-        # g)
+        # g) Yeni dataframe oluşturulması
         print("\n-----------------------\nYeni DataFrame\n-----------------------\n")
 
         yeni_df = df[["Ad", "Soyad", "Sektör", "Yeni Maaş"]]
