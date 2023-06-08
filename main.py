@@ -10,8 +10,6 @@ def main():
     try:
         # Öncelikle tüm objelerimi bir listede tutuyorum. Bu sayede daha sonra ekstra bir insan vs gibi bir class eklemek istersem bu listeye ekleyebilirim.
         obje_listesi = []
-        dic = {"objeler": obje_listesi}
-        print(dic)
         # Gerekli objeleri oluşturuyorum
         Insan1 = Insan("151441122", "Ali", "Mehmet", 48, "Erkek", "Türk")
         print(str(Insan1))
@@ -79,7 +77,7 @@ def main():
             "Cinsiyet": [obje.get_cinsiyet() for obje in obje_listesi],
             "Uyruk": [obje.get_uyruk_bilgileri() for obje in obje_listesi],
             "Sektör": [(obje.get_sektor() if hasattr(obje, "get_sektor") else 0) for obje in obje_listesi],
-            "Tecrübe(Yıl)": [(obje.get_tecrube() if hasattr(obje, "get_tecrube") else 0)for obje in obje_listesi],
+            "Tecrübe(Yıl)": [(obje.get_tecrube() / 12 if hasattr(obje, "get_tecrube") else 0)for obje in obje_listesi],
             "Maaş": [(obje.get_maas() if hasattr(obje, "get_maas") else 0) for obje in obje_listesi],
             "Yıpranma Payı": [(obje.get_yipranma_payi() if hasattr(obje, "get_yipranma_payi") else 0)for obje in obje_listesi],
             "Teşvik Primi": [(obje.get_tesvik_pirimi() if hasattr(obje, "get_tesvik_pirimi") else 0) for obje in obje_listesi],
