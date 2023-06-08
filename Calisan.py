@@ -1,6 +1,8 @@
+
 from Insan import Insan
-from Enums import Sektor
-import Helper.Functions as Helper
+
+
+sektorler = ["teknoloji", "muhasebe", "inşaat", "diğer"]
 
 
 class Calisan(Insan):
@@ -10,7 +12,8 @@ class Calisan(Insan):
         self._tecrube = tecrube
         self._maas = maas
         self._yeni_maas = 0
-        if (self.sektor_bul(sektor) != None):
+        self.sektor_bul
+        if sektor in sektorler:
             self._sektor = sektor
         else:
             raise ValueError("Sektor bulunamadi")
@@ -39,8 +42,9 @@ class Calisan(Insan):
         return self._sektor
 
     def set_sektor(self, sektor):
-        if (self.sektor_bul(sektor) != None):
+        if sektor in sektorler:
             self._sektor = sektor
+
         else:
             raise ValueError("Sektor bulunamadi")
 
@@ -55,13 +59,6 @@ class Calisan(Insan):
 
     def set_maas(self, maas):
         self._maas = maas
-
-    def sektor_bul(sektor):
-        sektor_var_mi = Helper.inputu_enumda_valide_et(Sektor, sektor)
-        if (sektor_var_mi):
-            return sektor
-        else:
-            return None
 
     def __str__(self):
         return self._ad + " " + self._soyad + " " + str(self._yeni_maas) + " " + str(self._tecrube)
