@@ -87,6 +87,9 @@ def main():
 
         df = pd.DataFrame(columns=["Nesne Değeri", "TC No", "Ad", "Soyad", "Yaş",  "Cinsiyet", "Uyruk",
                                    "Sektör",  "Tecrübe(Yıl)", "Maaş",  "Yıpranma Payı",  "Teşvik Primi", "Yeni Maaş"], data=data)
+        print("Dataframe :")
+        print(df)
+        print("\n\n---------------------")
 
         # Mavi yakalilar b)
         mavi_yakalar = df[df["Nesne Değeri"] == "MaviYaka"]
