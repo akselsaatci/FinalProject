@@ -60,7 +60,7 @@ def main():
         obje_listesi.append(BeyazYaka1)
         print(str(BeyazYaka1))
         BeyazYaka2 = BeyazYaka("343454657565", "Ayşe", "Erdoğan",
-                               27, "Kadın", "Türk", "muhasebe", 5, 15600, 10)
+                               27, "Kadın", "Türk", "muhasebe", 79, 15600, 10)
         obje_listesi.append(BeyazYaka2)
         print(str(BeyazYaka2))
         BeyazYaka3 = BeyazYaka("3413546653454", "Ümit", "Kalem",
