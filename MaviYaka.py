@@ -26,8 +26,8 @@ class MaviYaka(Calisan):
         tecrube_yili = self._tecrube / 12
         try:
             if (tecrube_yili < 2):
-                self._yeni_maas = (self._yipranma_payi * 10) + self._maas
-                return (self._yipranma_payi * 10)
+                self._yeni_maas = ((self._yipranma_payi * 10)/100) + self._maas
+                return (self._yipranma_payi * 10)/100
             elif (tecrube_yili < 4 and tecrube_yili >= 2 and self._maas < 15000):
                 zam = ((self._maas % tecrube_yili)/2 + (self._yipranma_payi * 10))/100
                 self._yeni_maas = self._maas + self._maas * zam
