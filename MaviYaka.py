@@ -29,12 +29,12 @@ class MaviYaka(Calisan):
                 self._yeni_maas = (self._yipranma_payi * 10) + self._maas
                 return (self._yipranma_payi * 10)
             elif (tecrube_yili < 4 and tecrube_yili >= 2 and self._maas < 15000):
-                zam = (self._maas % tecrube_yili)/2 + (self.yipranma_payi * 10)
+                zam = ((self._maas % tecrube_yili)/2 + (self._yipranma_payi * 10))/100
                 self._yeni_maas = self._maas + self._maas * zam
                 return zam
 
             elif (tecrube_yili >= 4 and self._maas < 25000):
-                zam = ((self._maas % tecrube_yili) / 3) + (self.yipranma_payi * 10)
+                zam = (((self._maas % tecrube_yili) / 3) + (self._yipranma_payi * 10))/100
                 self._yeni_maas = self._maas + self._maas * zam
                 return zam
             else:

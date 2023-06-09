@@ -35,12 +35,12 @@ class Calisan(Insan):
                 self._yeni_maas = self._maas
                 return 0
             elif (tecrube_yili < 4 and tecrube_yili >= 2 and self._maas < 15000):
-                zam = self._maas % tecrube_yili
+                zam = (self._maas % tecrube_yili) / 100
                 self._yeni_maas = self._maas + self._maas * zam
                 return zam
 
             elif (tecrube_yili >= 4 and self._maas < 25000):
-                zam = (self._maas % tecrube_yili) / 2
+                zam = ((self._maas % tecrube_yili) / 2)/100
                 self._yeni_maas = self._maas + self._maas * zam
                 return zam
             else:

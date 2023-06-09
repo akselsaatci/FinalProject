@@ -48,7 +48,7 @@ def main():
         obje_listesi.append(MaviYaka1)
         print(str(MaviYaka1))
         MaviYaka2 = MaviYaka("343545454546", "Şeyma", "Aydın",
-                             36, "Kadın", "Türk", "teknoloji", 4, 43000, 0.5)
+                             36, "Kadın", "Türk", "teknoloji", 49, 24000, 0.5)
         obje_listesi.append(MaviYaka2)
         print(str(MaviYaka2))
         MaviYaka3 = MaviYaka("232435645656", "Merve", "Kaya",
