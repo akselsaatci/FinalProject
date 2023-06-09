@@ -1,6 +1,5 @@
 
 
-import unittest
 from Calisan import Calisan
 
 
@@ -25,19 +24,17 @@ class MaviYaka(Calisan):
         # zam hakkını hesaplıyor ise zam hakkını geri dönmem gerekmezmi ama dökümasyonda maaşı set etmem de söylenmiş
         # tecrübe ay olarak geldiği için yıl olarak hesaplanması için 12'ye bölünüyor
         tecrube_yili = self._tecrube / 12
-        # Buna gerek varmı ?  zaten else 'e düşücek
         try:
             if (tecrube_yili < 2):
-                self._yeni_maas = self._maas * \
-                    (self._yipranma_payi * 10) + self._maas
+                self._yeni_maas = (self._yipranma_payi * 10) + self._maas
                 return (self._yipranma_payi * 10)
             elif (tecrube_yili < 4 and tecrube_yili >= 2 and self._maas < 15000):
-                zam = self._maas % tecrube_yili
+                zam = (self._maas % tecrube_yili)/2 + (self.yipranma_payi * 10)
                 self._yeni_maas = self._maas + self._maas * zam
                 return zam
 
             elif (tecrube_yili >= 4 and self._maas < 25000):
-                zam = (self._maas % tecrube_yili) / 2
+                zam = ((self._maas % tecrube_yili) / 3) + (self.yipranma_payi * 10)
                 self._yeni_maas = self._maas + self._maas * zam
                 return zam
             else:
@@ -49,3 +46,4 @@ class MaviYaka(Calisan):
 
     def __str__(self):
         return self._ad + " " + self._soyad + " " + str(self.get_yeni_maas()) + " " + str(self._tecrube)
+

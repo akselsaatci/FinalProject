@@ -44,27 +44,27 @@ def main():
         print(str(Calisan3))
 
         MaviYaka1 = MaviYaka("23245564545", "Melih", "Fatma",
-                             38, "Erkek", "Yabancı", "diğer", 0, 16800, 10)
+                             38, "Erkek", "Yabancı", "diğer", 0, 16800, 0.3)
         obje_listesi.append(MaviYaka1)
         print(str(MaviYaka1))
         MaviYaka2 = MaviYaka("343545454546", "Şeyma", "Aydın",
-                             36, "Kadın", "Türk", "muhasebe", 4, 43000, 10)
+                             36, "Kadın", "Türk", "teknoloji", 4, 43000, 0.5)
         obje_listesi.append(MaviYaka2)
         print(str(MaviYaka2))
         MaviYaka3 = MaviYaka("232435645656", "Merve", "Kaya",
-                             32, "Kadın", "Yabancı", "teknoloji", 23, 47800, 10)
+                             32, "Kadın", "Yabancı", "teknoloji", 23, 47800, 0.7)
         obje_listesi.append(MaviYaka3)
         print(str(MaviYaka3))
         BeyazYaka1 = BeyazYaka("232456565435", "Nihal", "Kaya",
-                               30, "Kadın", "Türk", "diğer", 22, 60000, 10)
+                               30, "Kadın", "Türk", "diğer", 22, 60000, 3000)
         obje_listesi.append(BeyazYaka1)
         print(str(BeyazYaka1))
         BeyazYaka2 = BeyazYaka("343454657565", "Ayşe", "Erdoğan",
-                               27, "Kadın", "Türk", "muhasebe", 79, 15600, 10)
+                               27, "Kadın", "Türk", "muhasebe", 79, 15600, 2500)
         obje_listesi.append(BeyazYaka2)
         print(str(BeyazYaka2))
         BeyazYaka3 = BeyazYaka("3413546653454", "Ümit", "Kalem",
-                               26, "Erkek", "Yabancı", "inşaat", 8, 28000, 10)
+                               26, "Erkek", "Yabancı", "inşaat", 8, 28000, 500)
         obje_listesi.append(BeyazYaka3)
         print(str(BeyazYaka3))
         # obje listemden datamı oluşturuyorum. Burda hata vermemesi için bazı yerlerde hasattr ile kontrol ediyorum. Listeyi de for ile dönerek gerekli alanları dolduruyorum.
@@ -118,7 +118,7 @@ def main():
         print(df[(df["Tecrübe(Yıl)"] > 3) & (
             df["Nesne Değeri"] == "BeyazYaka")])
 
-        # Yeni maaşı 10000 TL üzerinde olanlar için; 2-5 satır arası olanlar f)
+        # Yeni maaşı 10000 TL üzerinde olanlar için; 2-4 satır arası olanlar f)
         print("\n-----------------------\nYeni maaşı 10000 TL üzerinde olanlar için; 2-5 satır arası olanlar\n-----------------------\n")
 
         print(df[(df["Yeni Maaş"] > 10000) & (df.index > 1)

@@ -47,3 +47,4 @@ class Issiz(Insan):
 
     def __str__(self):
         return self._ad + " " + self._soyad + "\nStatu: {}".format(self.get_statu())
+

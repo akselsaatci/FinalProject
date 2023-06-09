@@ -9,6 +9,9 @@ class Calisan(Insan):
     # Tecrübe ay değeri olarak geliyor dikkat edilmeli
     def __init__(self, tc_no, ad, soyad, yas, cinsiyet, uyruk_bilgileri, sektor, tecrube, maas):
         self._tecrube = tecrube
+        if(tecrube <= 0):
+            print("Tecrübe 0 veya'dan küçük olamaz")
+            self._tecrube = 0.1
         self._maas = maas
         self.zam_hakki()
         self._yeni_maas = 0
@@ -71,3 +74,4 @@ class Calisan(Insan):
 
     def __str__(self):
         return self._ad + " " + self._soyad + " " + str(self.get_yeni_maas()) + " " + str(self._tecrube)
+

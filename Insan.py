@@ -45,3 +45,4 @@ class Insan:
 
     def __str__(self):
         return "Tc No: {}\nAd: {}\nSoyad: {}\nYaş: {}\nCinsiyet: {}\nUyruk Bilgileri: {}".format(self._tc_no, self._ad, self._soyad, self._yas, self._cinsiyet, self._uyruk_bilgileri)
+    
